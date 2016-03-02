@@ -5,7 +5,7 @@ Created on Tue Nov 10 08:33:22 2015
 
 @author: Brett
 """
-import serial
+import serial #from pySerial: https://github.com/pyserial/pyserial via `pip install pyserial`
 from   time import sleep
 
 class arduinoInterface():
