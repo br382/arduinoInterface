@@ -89,6 +89,9 @@ class arduinoInterface():
                 self.read_delay += self.cycle_delay
         return self.ser_buf
     
+    def waited(self):
+        return self.read_delay #seconds
+    
     def write(self, input_str=''):
         output_str = str(input_str)
         if len(output_str)>0:
