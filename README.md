@@ -11,6 +11,7 @@ usage:
 >> a.read()
 >> #returns text from Arduino and possibly waiting for transmission completion due to clock speed differences
 >> a.close()                      #be kind.. and rewind.
+>> a.closeAll(baud=None)          #close all pesky ports, returns int() of failed .close(), but does not change stored port/baud.
 >> a.open(port='COM1', baud=9600) #specify particular port
 >> a.clearBuf()                   #clear internal string buffer (not pending port values)
 >> a.findPort(baud=None)          #searches for first available port with specified baud and .open()'s it.
