@@ -40,7 +40,23 @@ class arduinoInterface():
             self.ser.baud = baud
         self.ser.close()
         return None
-
+    
+    def closeAll(self, baud=None):
+        unable = 0
+        po = self.ser.port
+        ba = self.ser.baud
+        if baud != None:
+            self.ser.baud = baud
+        for p in self.findAllPorts():
+            self.ser.port = p
+            try:
+                self.ser.close()
+            except:
+                unable += 1
+        self.ser.port = po
+        self.ser.baud = ba
+        return unable
+    
     def clearBuf(self):
         self.ser_buf = ''
         return None
